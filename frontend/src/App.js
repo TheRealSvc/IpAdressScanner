@@ -17,23 +17,27 @@ import {
 class App extends Component  {
   constructor(props) {
     super(props);
-    this.state = {computers: '', loading: 'true'} 
-  };
+    this.state = {
+      computers: '', 
+      loading: 'true'} 
+    };
 
-  updateIpScan = () =>  {
-    console.log(this.state.loading) ;
-    this.setState({loading: 'true'}, () => {
-    fetch('http://localhost:5000/api/getcomputer')
-    .then ( x => x.json())
-    .then( x => { this.setState({computers: x, loading: 'false'})})
-    .catch( 'error in fetching computers') }
-    )
-  };
-
+   updateIpScan = async () =>  {
+    this.setState({
+      computers: '', 
+      loading: 'true'}) 
+    await fetch('http://localhost:5000/api/getcomputer')
+    .then( x => x.json())
+    .then( x => this.setState({
+                  computers: x,
+                  loading: 'false'}))
+    .catch( 'error in fetching computers' )
+  }
+  
   componentDidMount() {
       this.updateIpScan() ;
     } 
-   
+
     render() {
       return ( 
         (this.state.loading==='true')
@@ -50,7 +54,7 @@ class App extends Component  {
         <div className="container"> 
             <Switch> 
               <Route exact path= "/" render={ () => <IpScanner computers={this.state.computers} rescanfun={this.updateIpScan } /> } /> 
-              <Route exact path= "/test" component={TestTable} /> 
+              <Route exact path= "/test" render={ () => <TestTable /> } />
             </Switch> 
         </div>
         </BrowserRouter>   

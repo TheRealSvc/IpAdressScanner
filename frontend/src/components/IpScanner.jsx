@@ -16,7 +16,7 @@ class IpScanner extends Component {
   return (
     <div className="ScanPage">
       <header className="MyHeader">
-        <button onClick={this.props.rescanfun() } >
+        <button onClick={this.props.rescanfun } >
         Update Scanning Table
         </button>
       </header>
