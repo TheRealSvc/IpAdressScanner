@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
 import { JsonToTable } from "react-json-to-table";
-//import { Button } from 'react-native-elements';
 
 class IpScanner extends Component { 
     
