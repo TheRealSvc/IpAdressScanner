@@ -8,8 +8,8 @@
 	"nodemon": "2.0.7"
   },
   "scripts": {
-    "client": "cd frontend && react-scripts start",
-    "server": "cd server && nodemon start",
+    //"client": "cd frontend && react-scripts start",
+    //"server": "cd server && nodemon start",
     "dev": "concurrently --kill-others   \"cd ./server && npm start\" \"cd ./frontend/ && npm start\""
   },
   "dependencies": {
