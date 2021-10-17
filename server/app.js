@@ -3,6 +3,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const path = require('path');
 // Enable all CORS Requests
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
 const routes = require("./routes");
@@ -15,13 +16,14 @@ app.use(morgan('dev')); // setup morgan which gives us http request logging
 app.use(express.json()) // bodyParser is included here 
 
 // setup a friendly greeting for the root route
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to the REST API project!',
-  });
-});
+//app.get('/', (req, res) => {
+//  res.json({
+//    message: 'Welcome to the REST API project!',
+//  });
+//});
 
-// Add routes.
+app.use('/', express.static(path.join(__dirname, '/frontend/build')));
+
 // Add routes.
 app.use('/api', routes);
 
