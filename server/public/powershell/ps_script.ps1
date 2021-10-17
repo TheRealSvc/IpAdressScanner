@@ -17,4 +17,4 @@ ForEach ($Computer in $Computers){
 }
 $Computers | ConvertTo-Json
 ##$Computers | ConvertTo-Json | Out-File iplisttmp.json 
-<#. Note: use  "Subnet*dynam" n arp command to select only dynamic ip adresses #>
+<#. Note: use  "Subnet*dynam" in arp command to select only dynamic ip adresses #>
