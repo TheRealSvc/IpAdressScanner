@@ -26,7 +26,7 @@ class App extends Component  {
     this.setState({
       computers: '', 
       loading: 'true'}) 
-    await fetch('https://ipscanner.herokuapp.com/api/getcomputer')
+    await fetch('/api/getcomputer')
     .then( x => x.json())
     .then( x => this.setState({
                   computers: x,
