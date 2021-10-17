@@ -22,7 +22,7 @@ app.use(express.json()) // bodyParser is included here
 //  });
 //});
 
-app.use('/', express.static(path.join(__dirname, '/frontend/build')));
+app.use('/', express.static(path.join(__dirname, '/frontend/src/index.js')));
 
 // Add routes.
 app.use('/api', routes);
