@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
     message: 'Welcome to the REST API project!',
   });
 });
-
 //app.use('/', express.static(path.join(__dirname, '/frontend/src/index.js')));
+
 
 // Add routes.
 app.use('/api', routes);
@@ -33,6 +33,7 @@ app.use((req, res) => {
     message: 'Route Not Found',
   });
 });
+
 
 // setup a global error handler
 app.use((err, req, res, next) => {
@@ -46,9 +47,10 @@ app.use((err, req, res, next) => {
   });
 });
 
-// set our port
-app.set('port', process.env.PORT || 5000);
 
+// set our port
+app.set('port', process.env.PORT || 4000);
+console.log(`port is ${process.env.PORT}`);
 // start listening on our port
 const server = app.listen(app.get('port'), () => {
   console.log(`Express server is listening on port ${server.address().port}`);

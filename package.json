@@ -10,7 +10,8 @@
   "scripts": {
     "client": "cd frontend && serve -s build",
     "server": "cd server && node server.bundle.js",
-    "dev": "concurrently --kill-others   \"cd ./server && npm start\" \"cd ./frontend/ && npm start\""
+    "dev": "concurrently --kill-others   \"cd ./server && npm start\" \"cd ./frontend/ && npm start\"",
+    "devTest": "concurrently --kill-others   \"cd ./server && node server.bundle.js\" \"cd ./frontend/ && serve -s build\""
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
