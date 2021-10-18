@@ -26,7 +26,7 @@ class App extends Component  {
     this.setState({
       computers: '', 
       loading: 'true'}) 
-    await fetch('/api/getcomputer')
+    await fetch('http://localhost:5000/api/getcomputer')
     .then( x => x.json())
     .then( x => this.setState({
                   computers: x,

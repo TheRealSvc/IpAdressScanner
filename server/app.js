@@ -16,13 +16,13 @@ app.use(morgan('dev')); // setup morgan which gives us http request logging
 app.use(express.json()) // bodyParser is included here 
 
 // setup a friendly greeting for the root route
-//app.get('/', (req, res) => {
-//  res.json({
-//    message: 'Welcome to the REST API project!',
-//  });
-//});
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to the REST API project!',
+  });
+});
 
-app.use('/', express.static(path.join(__dirname, '/frontend/src/index.js')));
+//app.use('/', express.static(path.join(__dirname, '/frontend/src/index.js')));
 
 // Add routes.
 app.use('/api', routes);
